@@ -65,11 +65,11 @@ CREATE TABLE monitor (
 
 INSERT INTO monitor (codigo_monitor, cedula_monitor, email_monitor, nombre_monitor, apellido_monitor, semestre_monitor, sede_monitor, carrera_monitor, numero_monitor, password_monitor)
 VALUES
-('2262567', '1234567890', 'monitor1@example.com', 'Juan', 'Pérez', '6', 'Sede Central', 'Ingeniería Informática', '123456789', 'password123'),
-('2262568', '0987654321', 'monitor2@example.com', 'María', 'González', '5', 'Sede Norte', 'Ciencias de la Computación', '987654321', 'securepass'),
-('2262569', '1111111111', 'monitor3@example.com', 'Luis', 'Martínez', '7', 'Sede Sur', 'Ingeniería de Software', '111111111', '123456'),
-('2262570', '2222222222', 'monitor4@example.com', 'Ana', 'Sánchez', '4', 'Sede Este', 'Tecnologías de la Información', '222222222', 'pass123'),
-('2262571', '3333333333', 'monitor5@example.com', 'Carlos', 'López', '8', 'Sede Oeste', 'Seguridad Informática', '333333333', 'qwerty');
+('2262567', '1234567890', 'monitor1@example.com', 'Juan', 'Pérez', '6', 'Sede Central', 'ingieneria_informatica', '123456789', 'password123'),
+('2262568', '0987654321', 'monitor2@example.com', 'María', 'González', '5', 'Sede Norte', 'tecnologia_alimentos', '987654321', 'securepass'),
+('2262569', '1111111111', 'monitor3@example.com', 'Luis', 'Martínez', '7', 'Sede Sur', 'ingieneria_electronica', '111111111', '123456'),
+('2262570', '2222222222', 'monitor4@example.com', 'Ana', 'Sánchez', '4', 'Sede Este', 'ingieneria_sistemas', '222222222', 'pass123'),
+('2262571', '3333333333', 'monitor5@example.com', 'Carlos', 'López', '8', 'Sede Oeste', 'tecnologia_desarrollo_software', '333333333', 'qwerty');
 
 CREATE TABLE administrador (
     cedula_administrador VARCHAR(15) NOT NULL,
