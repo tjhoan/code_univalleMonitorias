@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="/public/css/estilos_login.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <div class="page-content">
+      <div class="form-v4-content">
+        <div class="form-left">
+          <h2>INFORMACIÓN</h2>
+          <p class="text-1">Esta plataforma está pensada y diseñada para mejorar la<br>
+            comunicación entre monitores y estudiantes de nuestra<br>
+            Universidad del Valle.</p>
+          <p class="text-2">Aqui podrás como monitor establecer y como estudiante<br>
+            asistir a monitorias personalizadas con el fin de hacerlo<br>
+            más versatil y útil para todos nosotros.</p>
+          <div class="conteiner-link">
+            <a href="signUp">Crear Cuenta Estudiante</a>
+          </div>
+        </div>
+        <form class="form-detail" action="/form-login" method="post">
+          <h2>INICIAR SESIÓN</h2>
+          <div class="form-group">
+            <div class="form-row form-row-1">
+              <label for="your_email">Correo electrónico</label>
+              <input type="text" name="email" class="input-text" required value="estudiante3@example.com">
+            </div>
+          </div>  
+          <div class="form-group">
+            <div class="form-row form-row-1 ">
+              <label for="password">Contraseña</label>
+              <input type="password" name="password" class="input-text" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+          </div>
+          <div class="container">
+            <button type="submit" class="button-register num2">Iniciar Sesión</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <% if (typeof alerta !=='undefined' ) { %>
+      <% console.log(alerta) %>
+      <script>
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "<%= alerta %>",
+        });
+      </script>
+    <% } %>
+  </body>
+</html>

@@ -1,0 +1,297 @@
+/* Estilos para el cuerpo de la página */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Altura del cuerpo de la página */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    overflow: hidden; /* Oculta el desbordamiento */
+}
+
+/* Contenedor del formulario izquierdo */
+.form-left {
+    position: relative;
+}
+
+/* Botón para usuarios que ya tienen cuenta */
+.form-left .account {
+    position: absolute;
+    bottom: 30px;
+    left: 10%; 
+    background: #fff;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    font-weight: 700;
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    padding: 10px 20px;
+    outline: none;
+	transition: transform 0.2s;
+}
+
+.form-left .account:active {
+    transform: scale(0.95); 
+}
+
+/* Contenedor de contenido de la página */
+.page-content {
+    width: 100%;
+    margin: 0 auto;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor del formulario */
+.form-v4-content {
+    background: #0000;
+    width: 850px;
+    height: 500px;
+    border-radius: 25px;
+    margin: 175px 0;
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    font-family: 'Open Sans', sans-serif;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Encabezado del formulario */
+.form-v4-content h2 {
+    font-weight: 700;
+    font-size: 30px;
+    padding: 6px 0 0;
+    margin-bottom: 34px;
+    font-family: Dubai medium;
+}
+
+/* Contenedor del formulario izquierdo */
+.form-v4-content .form-left {
+    background: #CC1F32;
+    border-radius: 25px;
+    padding: 20px 40px;
+    position: relative;
+    width: 100%;
+    color: #fff;
+}
+
+/* Estilos para los párrafos dentro del formulario izquierdo */
+.form-v4-content .form-left p {
+    font-family: Dubai;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* Estilos para los campos de entrada en el formulario izquierdo */
+.form-v4-content .form-left .form-left-last input {
+    padding: 15px;
+    margin-top: 240px;
+    margin-left: 105px;
+}
+
+.form-v4-content .form-detail .form-row-last {
+	margin-left: -10px;
+	margin-top: 80px;
+}
+
+
+/* Centra el botón "Crear Cuenta" */
+.form-v4-content .form-left .form-left-last {
+	margin-left: -100px;
+	margin-top: 80px;
+}
+/* Contenedor del formulario */
+.form-v4-content .form-detail {
+    padding: 20px 40px;
+    position: relative;
+    width: 100%;
+}
+
+/* Encabezado del formulario */
+.form-v4-content .form-detail h2 {
+    font-size: 30px;
+    padding: 5px;
+	margin: center;
+    color: #CC1F32;
+}
+
+/* Contenedor de grupo de elementos del formulario */
+.form-v4-content .form-detail .form-group {
+    display: flex;
+    display: -webkit-flex;
+    margin: 0 -8px;
+}
+
+/* Estilos para las filas del formulario */
+.form-v4-content .form-detail .form-row {
+    width: 100%;
+    position: relative;
+}
+
+/* Estilos para las filas del formulario en grupos */
+.form-v4-content .form-detail .form-group .form-row.form-row-1 {
+    width: 50%;
+    padding: 0 8px;
+}
+
+/* Estilos para las etiquetas del formulario */
+.form-v4-content .form-detail label {
+    font-weight: 600;
+    font-size: 15px;
+    color: #666;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Estilos para el campo de correo electrónico */
+.form-v4-content .form-detail .form-row.form-row-1 input {
+    margin-bottom: 30px; /* Ajusta el espacio entre los campos */
+}
+
+
+/* Estilos para los campos de texto del formulario */
+.form-v4-content .form-detail .input-text {
+    margin-bottom: 7px;
+	width: 280px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para los campos de entrada en el formulario */
+.form-v4-content .form-detail input {
+    width: 100%;
+    padding: 11.5px 15px;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    outline: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.form-v4-content .form-detail .form-row input:focus {
+    border: 1px solid #CC1F32;
+}
+
+
+/* Estilos para el botón de registro del formulario */
+.form-v4-content .form-detail .register {
+    font-family: Helvetica;
+    background: #CC1F32;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.form-v4-content .forgot-password {
+    color: #CC1F32;
+    font-size: 13px;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.conteiner-link {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.conteiner-link a {
+    font-family: Helvetica;
+    background: white;
+    border-radius: 10px;
+    width: 130px;
+    height: 47px;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none; 
+    line-height: 20px;
+    margin-top: 110px;
+    padding-top: 8px;
+}
+
+.conteiner-link a:hover {
+    transform: scale(1.1); 
+    transition: transform 0.2s ease-in-out;
+}
+
+.conteiner-link a:active {
+    transform: scale(0.9);
+    transition: transform 0.2s ease-in-out;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0000;
+}
+
+.button-register {
+    font-family: Helvetica;
+    background: #ffffff;
+    border-radius: 10px;
+    width: 130px;
+    height: 38px;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    font-weight: 700;
+    font-size: 15px;
+    margin-top: 110px;
+}
+
+.num2 {
+    background: #CC1F32;
+    color: #fff;
+    margin-top: 70px;
+    width: 100%;
+    height: 40px;
+
+} 
+
+.button-register:hover {
+    transform: scale(1.1); 
+    transition: transform 0.2s ease-in-out;
+}
+
+.button-register:active {
+    transform: scale(0.9);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 575px) {
+    /* Cambios en la disposición de los elementos para pantallas pequeñas */
+    .form-v4-content .form-detail .form-group {
+        flex-direction: column;
+        -o-flex-direction: column;
+        -ms-flex-direction: column;
+        -moz-flex-direction: column;
+        -webkit-flex-direction: column;
+        margin: 0;
+    }
+    /* Ajustes en la anchura y el espaciado de las filas del formulario */
+    .form-v4-content .form-detail .form-group .form-row.form-row-1 {
+        width: 100%;
+        padding: 0;
+    }
+    /* Ajustes en el margen inferior de las etiquetas del formulario */
+    .form-v4-content .form-detail .form-group label {
+        margin-bottom: 5px;
+    }
+    /* Ajustes en el margen inferior de los campos de texto del formulario */
+    .form-v4-content .form-detail .form-group input {
+        margin-bottom: 10px;
+    }
+}

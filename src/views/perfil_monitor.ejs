@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil Monitor</title>
+    <link rel="stylesheet" href="/public/css/estilos_perfil_estudiante.css" />
+  </head>
+  <body>
+    <div class="container_nav">
+      <nav class="navigation">
+        <ul>
+          <li>
+            <a href="#">
+              </span>
+              <div class="univallelogo">
+                <img src="/public/assets/icons/logoUnivalle.png">
+              </div>
+              <div class="textounivalle">Univalle</div>
+            </a>
+          </li>
+          <li>
+            <a href="/monitores">
+              <span class="icon">
+                <img src="../../public/assets/icons/lista.png" alt="">
+              </span>
+              <span class="title">Lista Monitores</span>
+            </a>
+          </li>
+          <li>  
+            <a href="#">
+              <span class="icon">
+                <img src="../../public/assets/icons/informacion.png" alt="">
+              </span>
+              <span class="title">Funciones Monitor</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <% if (data) { %>
+      <% for(var i=0; i < data.length; i++) { %>
+    <div class="container">
+      <div class="profile">
+        <h2>Perfil Monitor</h2>
+        <div class="horizontal-group">
+          <div class="pair">
+              <p><strong>Nombre</strong></p>
+              <p><%=data[i].nombre_monitor%></p>
+          </div>
+          <div class="pair">
+              <p><strong>Apellido</strong></p>
+              <p><%=data[i].apellido_monitor%></p>
+          </div>
+        </div>
+        <div class="only-group">
+          <div class="item-only">
+            <p><strong>Correo</strong></p>
+            <p><%=data[i].email_monitor%></p>
+          </div>
+          <div class="item-only">
+            <p><strong>Codigo</strong></p>
+            <p><%=data[i].codigo_monitor%></p>
+          </div>
+          <div class="item-only">
+            <p><strong>Carrera</strong></p>
+            <p><%=data[i].carrera_monitor%></p>
+          </div>
+        </div>
+        <div class="horizontal-group">
+          <div class="pair">
+              <p><strong>Sede</strong></p>
+              <p><%=data[i].sede_monitor%></p>
+          </div>
+          <div class="pair">
+              <p><strong>Semestre</strong></p>
+              <p><%=data[i].semestre_monitor%></p>
+          </div>
+        </div>
+      </div>
+      <div class="message-form">
+        <h2>Envia Un Correo Al Monitor</h2>
+        <form action="/email" method="post">
+          <label for="subject"><strong>Para</strong></label>
+          <input type="text" name="to" value="<%=data[i].email_monitor%>" required/>
+          <label for="subject"><strong>Asunto</strong></label>
+          <input type="text" name="subject" value="Un asunto melo" required/>
+          <label for="message"><strong>Mensaje</strong></label>
+          <textarea name="message" required>Quiero tener una reunion contigo mylov</textarea>
+          <button type="submit">Enviar Mensaje</button>
+        </form>
+      </div>
+    <a href="https://wa.me/<%=data[i].numero_monitor%>?text=Hola, soy estudiante de Univalle y me gustaria que me ayudes con una monitoria" target="_blank"><img class="icon-whatsapp" src="/public/assets/icons/whatsapp.png" alt="whatsapp"></a>
+    <% }} %>  
+    </div>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Datos del Estudiante</title>
+    <link rel="stylesheet" href="/public/css/estilos_estudiante_update.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Editar Datos del Estudiante</h2>
+        <div id="alert" class="alert"></div>
+        <form action="/updateEstudiante/<%= data.codigo_estudiante %>" method="post">
+          <% if (data) { %>
+            <% for(var i=0; i < data.length; i++) { %> 
+            <div class="horizontal-group">
+                <div class="form-group">
+                    <label for="codigo_estudiante">Código del Estudiante</label>
+                    <input type="text" id="codigo_estudiante" name="codigo_estudiante" maxlength="13" value="<%= data[i].codigo_estudiante %>">
+                </div>
+                <div class="form-group">
+                    <label for="password_estudiante">Contraseña</label>
+                    <input type="text" id="password_estudiante" name="password_estudiante" maxlength="50" value="<%= data[i].password_estudiante %>">
+                </div>
+            </div>
+            <div class="horizontal-group">
+                <div class="form-group">
+                    <label for="nombre_estudiante">Nombre del Estudiante</label>
+                    <input type="text" id="nombre_estudiante" name="nombre_estudiante" maxlength="50" value="<%= data[i].nombre_estudiante %>">
+                </div>
+                <div class="form-group">
+                    <label for="apellido_estudiante">Apellido del Estudiante</label>
+                    <input type="text" id="apellido_estudiante" name="apellido_estudiante" maxlength="50" value="<%= data[i].apellido_estudiante %>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email_estudiante">Correo</label>
+                <input type="email" id="email_estudiante" name="email_estudiante" maxlength="50" value="<%= data[i].email_estudiante %>">
+            </div>
+            <div class="horizontal-group">
+                <div class="form-group">
+                    <label for="sede_estudiante">Sede</label>
+                    <select name="sede_estudiante" class="input-select" required>
+                        <option value="<%= data[i].sede_estudiante %>"><%= data[i].sede_estudiante %></option>
+                        <option value="Cali">Cali</option>
+                        <option value="Pacifico">Pacifico</option>
+                        <option value="Palmira">Palmira</option>
+                        <option value="Zarzal">Zarzal</option>
+                        <option value="Caicedonia">Caicedonia</option>
+                        <option value="Buga">Buga</option>
+                        <option value="Cartago">Cartago</option>
+                        <option value="Tulua">Tulua</option>
+                        <option value="Norte del Cauca">Norte del Cauca</option>
+                        <option value="Yumbo">Yumbo</option>
+                      </select>
+                </div>
+                <div class="form-group">
+                    <label for="semestre_estudiante">Semestre</label>
+                    <select name="semestre_estudiante" class="input-select" required>
+                        <option value="data[i].semestre_estudiante"><%= 
+                            data[i].semestre_estudiante === 'Primero' ? 'Primero' :
+                            data[i].semestre_estudiante === 'Segundo' ? 'Segundo' :
+                            data[i].semestre_estudiante === 'Tercero' ? 'Tercero' :
+                            data[i].semestre_estudiante === 'Cuarto' ? 'Cuarto' :
+                            data[i].semestre_estudiante === 'Quinto' ? 'Quinto' :
+                            data[i].semestre_estudiante === 'Sexto' ? 'Sexto' :
+                            data[i].semestre_estudiante === 'Septimo' ? 'Septimo' :
+                            data[i].semestre_estudiante === 'Octavo' ? 'Octavo' :
+                            data[i].semestre_estudiante === 'Noveno' ? 'Noveno' :
+                            data[i].semestre_estudiante === 'Decimo' ? 'Decimo' :
+                            data[i].semestre_estudiante === 'Decimo Primero' ? 'Decimo Primero' :
+                            data[i].semestre_estudiante === 'Duodecimo' ? 'Duodecimo' :
+                            data[i].semestre_estudiante%></option>
+                        <option value="Primero">Primero</option>
+                        <option value="Segundo">Segundo</option>
+                        <option value="Tercero">Tercero</option>
+                        <option value="Cuarto">Cuarto</option>
+                        <option value="Quinto">Quinto</option>
+                        <option value="Sexto">Sexto</option>
+                        <option value="Septimo">Septimo</option>
+                        <option value="Octavo">Octavo</option>
+                        <option value="Noveno">Noveno</option>
+                        <option value="Decimo">Decimo</option>
+                        <option value="Noveno">Noveno</option>
+                        <option value="Duodecimo">Duodécimo</option>
+                      </select>
+                </div>
+                <div class="form-group">
+                    <label for="carrera_estudiante">Carrera</label>
+                    <select name="carrera_estudiante" required>
+                        <option value="data[i].carrera_estudiante"><%= 
+                            data[i].carrera_estudiante === 'tecnologia_desarrollo_software' ? 'Tec. Desarrollo de Software' : 
+                            data[i].carrera_estudiante === 'ingenieria_sistemas' ? 'Ingeniería en Sistemas' : 
+                            data[i].carrera_estudiante === 'ingenieria_informatica' ? 'Ingeniería Informática' : 
+                            data[i].carrera_estudiante === 'ingenieria_industrial' ? 'Ingeniería Industrial' : 
+                            data[i].carrera_estudiante === 'ingenieria_electronica' ? 'Ingeniería Electrónica' : 
+                            data[i].carrera_estudiante%></option>
+                        <option value="tecnologia_desarrollo_software">Tec. Desarrollo de Software</option>
+                        <option value="ingieneria_sistemas">Ingeniería en Sistemas</option>
+                        <option value="ingieneria_informatica">Ingeniería Informática</option>
+                        <option value="ingieneria_industrial">Ingeniería Industrial</option>
+                        <option value="ingieneria_electronica">Ingeniería Electrónica</option>
+                        <option value="administracion_empresas">Administracion De Empresas</option>
+                        <option value="comercio_exterior">Comercio Exterior</option>
+                        <option value="tecnologia_alimentos">Tec. Alimentos</option>
+                    </select>
+                </div>
+            </div>
+            <% }} %>
+            <div class="boton_guardar">
+                <button type="submit" id="button" class="button-save">Guardar Cambios</button>
+              </div>
+        </form>
+        <div class="boton_volver">
+            <a href="/admin"><button class="button-back">Volver</button></a>
+        </div>
+    </div>
+</body>
+</html>

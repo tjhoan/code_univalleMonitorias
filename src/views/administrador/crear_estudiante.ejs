@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guardar Estudiante</title>
+    <link rel="stylesheet" href="/public/css/estilos_estudiante_update.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Crear Estudiante</h2>
+      <div id="alert" class="alert"></div>
+      <form action="save_estudiante" method="post">
+        <div class="horizontal-group">
+          <div class="form-group">
+            <label for="codigo_estudiante">Código</label>
+            <input type="text" id="codigo_estudiante" name="codigo_estudiante" value="2262598"/>
+          </div>
+          <div class="form-group">
+            <label for="password_estudiante">Contraseña</label>
+            <input type="text" id="password_estudiante" name="password_estudiante" value="casca"/>
+          </div>
+        </div>
+        <div class="horizontal-group">
+          <div class="form-group">
+            <label for="nombre_estudiante">Nombre</label>
+            <input type="text" id="nombre_estudiante" name="nombre_estudiante" value="lalo"/>
+          </div>
+          <div class="form-group">
+            <label for="apellido_estudiante">Apellido</label>
+            <input type="text" id="apellido_estudiante" name="apellido_estudiante" value="loo"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email_estudiante">Correo</label>
+          <input type="email" id="email_estudiante" name="email_estudiante" value="jua@gmail.com"/>
+        </div>
+        <div class="horizontal-group">
+          <div class="form-group">
+            <label for="sede_estudiante">Sede</label>
+            <select name="sede_estudiante" class="input-select" required>
+              <option value="Cali">Cali</option>
+              <option value="Pacifico">Pacifico</option>
+              <option value="Palmira">Palmira</option>
+              <option value="Zarzal">Zarzal</option>
+              <option value="Caicedonia">Caicedonia</option>
+              <option value="Buga">Buga</option>
+              <option value="Cartago">Cartago</option>
+              <option value="Tulua">Tulua</option>
+              <option value="Norte del Cauca">Norte del Cauca</option>
+              <option value="Yumbo">Yumbo</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="semestre_estudiante">Semestre</label>
+            <select name="semestre_estudiante" class="input-select" required>
+              <option value="Primero">Primero</option>
+              <option value="Segundo">Segundo</option>
+              <option value="Tercero">Tercero</option>
+              <option value="Cuarto">Cuarto</option>
+              <option value="Quinto">Quinto</option>
+              <option value="Sexto">Sexto</option>
+              <option value="Septimo">Septimo</option>
+              <option value="Octavo">Octavo</option>
+              <option value="Noveno">Noveno</option>
+              <option value="Decimo">Decimo</option>
+              <option value="Noveno">Noveno</option>
+              <option value="Duodecimo">Duodécimo</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="carrera_estudiante">Carrera</label>
+            <select name="carrera_estudiante" required>
+              <option value="tecnologia_desarrollo_software">
+                Tec. Desarrollo de Software
+              </option>
+              <option value="ingieneria_sistemas">
+                Ingeniería en Sistemas
+              </option>
+              <option value="ingieneria_informatica">
+                Ingeniería Informática
+              </option>
+              <option value="ingieneria_industrial">
+                Ingeniería Industrial
+              </option>
+              <option value="ingieneria_electronica">
+                Ingeniería Electrónica
+              </option>
+              <option value="administracion_empresas">
+                Administracion De Empresas
+              </option>
+              <option value="comercio_exterior">Comercio Exterior</option>
+              <option value="tecnologia_alimentos">Tec. Alimentos</option>
+            </select>
+          </div>
+        </div>
+        <div class="boton_guardar">
+          <button type="submit" id="button" class="button-save">
+            Guardar Estudiante
+          </button>
+        </div>
+      </form>
+      <div class="boton_volver">
+        <a href="/admin"><button class="button-back">Volver</button></a>
+      </div>
+    </div>
+    <% if (typeof alerta !=='undefined' ) { %> <% console.log(alerta) %>
+    <script>
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "<%= alerta %>",
+      });
+    </script>
+    <% } %>
+  </body>
+</html>

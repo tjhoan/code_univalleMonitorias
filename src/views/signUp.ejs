@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/public/css/estilos_signUp.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+      <div class="card_container">
+        <div class="card_left">
+          <h2>MONITORIAS</h2>
+          <div class="info-container">
+            <p class="text-info_uni">Universidad del Valle, Sede Zarzal</br>Dirección: Cl. 14 #7-134</br>Teléfono: 22209193</p>
+            <div class="container_img">
+              <img src="/public/assets/img/Univalle.jpg" alt="Imagen Univalle">
+            </div>
+          </div>
+          <div class="conteiner_button">
+            <a href="login">Crear Cuenta</a>
+          </div>
+        </div>  
+        <form action="/form-signUp" method="post">
+          <div class="conteiner_h2">
+            <h2>REGISTRARSE</h2>
+          </div>
+          <div class="form-container">
+            <div class="personal_info">
+              <div class="form-group">
+                <div class="form-row">
+                  <label for="first_name">Nombres</label>
+                  <input type="text" name="nombre_estudiante" class="input-text" value="Jhoan" required>
+                </div>
+                <div class="form-row">
+                  <label for="last_name">Apellidos</label>
+                  <input type="text" name="apellido_estudiante" class="input-text" value="Toro" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-row">
+                  <label for="email">Correo</label>
+                  <input type="email" name="email_estudiante" class="input-text" value="toro.jhoan@correounivalle.edu.co" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-row">
+                  <label for="password">Contraseña</label>
+                  <input type="password" name="password_estudiante" class="input-text" value="12345" required>
+                </div>
+                <div class="form-row">
+                  <label for="comfirm-password">Confirmar contraseña</label>
+                  <input type="password" name="password_estudiante_confirm" class="input-text" value="12345" required>
+                </div>
+              </div>  
+            </div>
+            <div class="uni_info">
+              <div class="form-row">
+                <div class="form-row ">
+                  <label for="Codigo">Codigo del estudiante</label>
+                  <input type="text" name="codigo_estudiante" class="input-text" value="2262567" required>
+                </div>
+                <div class="form-row ">
+                  <label for="Carrera_estudiante">Carrera del estudiante</label>
+                  <select name="carrera_estudiante" required>
+                    <option value="tecnologia_desarrollo_software">Tec. Desarrollo de Software</option>
+                    <option value="ingieneria_sistemas">Ingeniería en Sistemas</option>
+                    <option value="ingieneria_informatica">Ingeniería Informática</option>
+                    <option value="ingieneria_industrial">Ingeniería Industrial</option>
+                    <option value="ingieneria_electronica">Ingeniería Electrónica</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-row">
+                  <label for="sede_estudiante">Sede</label>
+                  <select name="sede_estudiante" class="input-select" required>
+                    <option value="Cali">Cali</option>
+                    <option value="Pacifico">Pacifico</option>
+                    <option value="Palmira">Palmira</option>
+                    <option value="Zarzal">Zarzal</option>
+                    <option value="Caicedonia">Caicedonia</option>
+                    <option value="Buga">Buga</option>
+                    <option value="Cartago">Cartago</option>
+                    <option value="Tulua">Tulua</option>
+                    <option value="Norte del Cauca">Norte del Cauca</option>
+                    <option value="Yumbo">Yumbo</option>
+                  </select>
+                </div>
+                <div class="form-row">
+                  <label for="Semestre_estudiante">Semestre</label>
+                  <select name="semestre_estudiante" class="input-select" required>
+                    <option value="Primero">Selecciona Semestre</option>
+                    <option value="Primero">Primero</option>
+                    <option value="Segundo">Segundo</option>
+                    <option value="Tercero">Tercero</option>
+                    <option value="Cuarto">Cuarto</option>
+                    <option value="Quinto">Quinto</option>
+                    <option value="Sexto">Sexto</option>
+                    <option value="Septimo">Septimo</option>
+                    <option value="Octavo">Octavo</option>
+                    <option value="Noveno">Noveno</option>
+                    <option value="Decimo">Decimo</option>
+                    <option value="Noveno">Noveno</option>
+                    <option value="Duodecimo">Duodécimo</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="conteiner_button">
+            <button type="submit" id="button" class="button-register">Registrese</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <% if (typeof alerta !=='undefined' ) { %>
+      <% console.log(alerta) %>
+      <script>
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "<%= alerta %>",
+        });
+      </script>
+    <% } %>
+  </body>
+</html>

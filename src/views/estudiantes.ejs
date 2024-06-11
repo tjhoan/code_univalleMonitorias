@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Univalle</title>
+    <link rel="stylesheet" href="/public/css/estilos_estudiantes.css">
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navigation">
+        <ul>
+          <li>
+            <a href="#">
+              </span>
+              <div class="univallelogo">
+                <img src="/public/assets/icons/logoUnivalle.png">
+              </div>
+              <div class="textounivalle">Univalle</div>
+            </a>
+          </li>
+          <li>
+            <a href="/monitores">
+              <span class="icon">
+                <ion-icon name="people-outline"></ion-icon>
+              </span>
+              <span class="title">Monitores</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="people-outline"></ion-icon>
+              </span>
+              <span class="title">Funciones Monitor</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- ========================= Main ==================== -->
+      <main class="main">
+        <div class="barraBusqueda">
+          <div class="toggle">
+            <ion-icon name="menu-outline"></ion-icon>
+          </div>
+        </div>
+        <!-- ================ Tabla ================= -->
+        <div class="detalles">
+          <div class="listaMonitor">
+            <h2>Lista De Estudiantes</h2>
+            <table>
+              <thead>
+                <tr>
+                  <td>Codigo</td>
+                  <td>Nombre Completo</td>
+                  <td>Correo</td>
+                  <td>Carrera</td>
+                  <td>Sede</td>
+                  <td>Semestre</td>
+                </tr>
+              </thead>
+              <tbody> 
+            <% if (data) { %>
+              <% for(var i=0; i < data.length; i++) { %>
+                <tr>
+                  <td><%=data[i].codigo_estudiante%></td>
+                  <td><%=data[i].nombre_estudiante%> <%=data[i].apellido_estudiante%></td>
+                  <td><%=data[i].email_estudiante%></td>
+                  <td><%=data[i].carrera_estudiante%></td>
+                  <td><%=data[i].sede_estudiante%></td>
+                  <td><%=data[i].semestre_estudiante%></td>
+                </tr>
+                <% }} %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+      let list = document.querySelectorAll(".navigation li");
+      console.log("hola")
+
+      function activeLink() {
+        list.forEach((item) => {
+          item.classList.remove("hovered");
+        });
+        this.classList.add("hovered");
+      }
+      list.forEach((item) => item.addEventListener("mouseover", activeLink));
+
+      // Menu Toggle
+      let toggle = document.querySelector(".toggle");
+      let navigation = document.querySelector(".navigation");
+      let main = document.querySelector(".main");
+
+      toggle.onclick = function () {
+        navigation.classList.toggle("active");
+        main.classList.toggle("active");
+      };
+    </script>
+  </body>
+</html>

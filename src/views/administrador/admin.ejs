@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.bootstrap5.css">
+  <link rel="stylesheet" href="/public/css/estilos_admin.css">
+</head>
+<body>
+  <div class="container-main">
+    <div class="tarjetas">
+      <div class="header-superior">
+        <h2>Estudiantes</h2>
+        <div class="boton">
+          <a href="/crear_estudiante"><button class="button-crear">Crear Estudiante</button></a>
+        </div>
+      </div>
+      <table id="table" class="table table-striped" style="width:100%">
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Correo</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if (data_estudiante) { %>
+            <% for(var i=0; i < data_estudiante.length; i++) { %> 
+              <tr>
+                <td><%=data_estudiante[i].codigo_estudiante%></td>
+                <td><%=data_estudiante[i].nombre_estudiante%></td>
+                <td><%=data_estudiante[i].apellido_estudiante%></td>
+                <td><%=data_estudiante[i].email_estudiante%></td>
+                <td>
+                  <a href="/updateEstudiante/<%= data_estudiante[i].codigo_estudiante %>" class='edita'>Editar</a>
+                  <a href="/deleteEstudiante/<%= data_estudiante[i].codigo_estudiante %>" class='deletea'>Eliminar</a>
+                </td>
+              </tr>
+            <% }} %>
+        </tbody>
+      </table>
+    </div>
+    <div class="tarjetas">
+      <div class="header-superior">
+        <h2>Monitores</h2>
+        <div class="boton">
+          <a href="/crear_monitor"><button class="button-crear">Crear Monitor</button></a>
+        </div>
+      </div>
+      <table id="table2" class="table table-striped" style="width:100%">
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Correo</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if (data_monitor) { %>
+            <% for(var i=0; i < data_monitor.length; i++) { %> 
+              <tr>
+                <td><%=data_monitor[i].codigo_monitor%></td>
+                <td><%=data_monitor[i].nombre_monitor%></td>
+                <td><%=data_monitor[i].apellido_monitor%></td>
+                <td><%=data_monitor[i].email_monitor%></td>
+                <td>
+                  <a href="/updateMonitor/<%= data_monitor[i].codigo_monitor %>" class='edita'>Editar</a>
+                  <a href="/deleteMonitor/<%= data_monitor[i].codigo_monitor %>" class='deletea'>Eliminar</a>
+                </td>
+              </tr>
+            <% }} %>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+  <script src="https://cdn.datatables.net/2.0.8/js/dataTables.bootstrap5.js"></script>
+  <script>
+    new DataTable('#table');
+    new DataTable('#table2');
+  </script>
+</body>
+</html> 
