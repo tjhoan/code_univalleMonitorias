@@ -269,23 +269,10 @@ controller.loginSignUp = (req, res) => {
             }
             break;
     
-          case 'carrera_estudiante':
-            if (typeof value !== 'string' || !traeNumeros.test(value)) {
-              return { valid: false, message: 'La carrera del estudiante debe ser seleccionado' };
-            }
-            break;
-    
-          case 'sede_estudiante':
-            if (typeof value !== 'string' || !traeNumeros.test(value)) {
-              return { valid: false, message: 'La sede del estudiante debe ser seleccionado' };
-            }
-            break;
-    
-          case 'semestre_estudiante':
-            if (typeof value !== 'string' || !traeNumeros.test(value)) {
-              return { valid: false, message: 'El semestre del estudiante debe ser seleccionado' };
-            }
-            break;
+            case 'carrera_estudiante':
+            case 'sede_estudiante':
+            case 'semestre_estudiante':
+              break
     
           default:
             return { valid: false, message: `Campo ${key} no reconocido` };
